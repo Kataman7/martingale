@@ -8,7 +8,7 @@ function martingaleSimulation(initialBet, money, display) {
 
         if (Math.random() < 18 / 37) {
             money += bet * 2;
-            text += `<span class="positive">${bet}€ -> ${money}\$</span>\n`;
+            text += `<span class="positive">${bet}€</span> -> ${money}\$\n`;
             bet = initialBet;
 
             if (display) document.getElementById('output').innerHTML += text + '\n';
