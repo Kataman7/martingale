@@ -20,9 +20,10 @@ function rouletteSimulation(initialBet, initialMoney, game) {
                 // Appel récursif pour le prochain tour après une petite pause
                 setTimeout(runRound, 15);
             } else {
-                bet *= 2;
                 const text = `<span class="negative">-${bet}$ </span>`;
                 document.getElementById('output').innerHTML += text;
+
+                bet *= 2;
 
                 // Appel récursif pour le prochain tour après une petite pause
                 setTimeout(runRound, 15);
