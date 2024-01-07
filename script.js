@@ -70,8 +70,8 @@ function chanceToWin(iterations, initialBet, money, game) {
 }
 
 function runRouletteSimulation() {
-    const initialBet = parseInt(document.getElementById('initialBet').value);
-    const money = parseInt(document.getElementById('money').value);
+    const initialBet = parseFloat(document.getElementById('initialBet').value);
+    const money = parseFloat(document.getElementById('money').value);
     const games = parseInt(document.getElementById('games').value);
 
     // Effacer le texte actuel dans la zone de sortie
@@ -82,8 +82,8 @@ function runRouletteSimulation() {
 
 function runChanceToWin() {
     const iterations = parseInt(document.getElementById('iterations').value);
-    const initialBet = parseInt(document.getElementById('initialBet').value);
-    const money = parseInt(document.getElementById('money').value);
+    const initialBet = parseFloat(document.getElementById('initialBet').value);
+    const money = parseFloat(document.getElementById('money').value);
     const games = parseInt(document.getElementById('games').value);
 
     // Effacer le texte actuel dans la zone de sortie
