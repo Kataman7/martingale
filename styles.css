@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1f1f1f; /* Fond sombre */
+    color: #fff; /* Texte clair */
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #2a2a2a; /* Fond du conteneur sombre */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #61dafb; /* Bleu clair */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #61dafb; /* Bleu clair */
+}
+
+input {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #333; /* Fond du champ de saisie sombre */
+    color: #fff; /* Texte clair */
+    border: 1px solid #444; /* Bordure sombre */
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #61dafb; /* Bleu clair */
+    color: #1f1f1f; /* Texte sombre */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4fa3d1; /* Bleu légèrement plus foncé au survol */
+}
+
+span.positive {
+    color: #4CAF50; /* Vert */
+}
+
+span.negative {
+    color: #FF5252; /* Rouge */
+}
+
+#output {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line;
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333; /* Fond de la zone de sortie sombre */
+    border: 1px solid #444; /* Bordure sombre */
+    border-radius: 4px;
+    color: #fff; /* Texte clair */
+}
