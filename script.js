@@ -31,7 +31,7 @@ function rouletteSimulation(initialBet, initialMoney, game) {
         } else {
             // Une petite pause supplémentaire après la boucle pour la dernière mise à jour de l'affichage
             setTimeout(() => {
-                document.getElementById('output').innerHTML += `\n\nFinal Money: ${money}$\nTotal Gain: ${money - initialMoney}`;
+                document.getElementById('output').innerHTML += `\n\nFinal Wallet: ${money}$\nTotal Gain: ${money - initialMoney}`;
             }, 15);
         }
     }
@@ -41,8 +41,9 @@ function rouletteSimulation(initialBet, initialMoney, game) {
 
     return money >= bet;
 }
-function rouletteCalculation(initialBet, money, game) {
+function rouletteCalculation(initialBet, initialMoney, game) {
 
+    let money = initialMoney;
     let rounds = 0;
     let bet = initialBet;
 
@@ -58,15 +59,21 @@ function rouletteCalculation(initialBet, money, game) {
         }
     }
 
-    return money >= bet;
+    return money - initialMoney;
 }
 
 function chanceToWin(iterations, initialBet, money, game) {
-    let ratio = 0;
+    let winRate = 0;
+    let gainMoyen = 0;
+
     for (let i = 0; i < iterations; i++) {
-        if (rouletteCalculation(initialBet, money, game)) ratio++;
+        const gain = rouletteCalculation(initialBet, money, game)
+        gainMoyen += gain;
+        if (gain >= initialBet) {
+            winRate++
+        }
     }
-    return ratio / iterations;
+    return { winRate: (winRate / iterations), gainMoyen: (gainMoyen / iterations)}
 }
 
 function runRouletteSimulation() {
@@ -89,6 +96,12 @@ function runChanceToWin() {
     // Effacer le texte actuel dans la zone de sortie
     document.getElementById('output').innerHTML = "";
 
-    const winRatio = chanceToWin(iterations, initialBet, money, games);
-    document.getElementById('output').innerHTML += `Chance to Win ${games * initialBet}$ after ${games} games: ${(winRatio * 100).toFixed(2)}%`;
+    const result = chanceToWin(iterations, initialBet, money, games);
+
+    if (result.winRate > 0) {
+        document.getElementById('output').innerHTML += `Chance to Win ${games * initialBet}$ after ${games} games: ${(result.winRate * 100).toFixed(2)}%\n`;
+        document.getElementById('output').innerHTML += `Average Gain: ${result.gainMoyen.toFixed(2)}$`;
+    } else {
+        document.getElementById('output').innerHTML += `No wins after ${games} games.`;
+    }
 }

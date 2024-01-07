@@ -3,7 +3,7 @@ body {
     text-align: center;
     background-color: #2C2F33; /* Fond sombre Discord */
     color: #fff; /* Texte clair */
-    margin: 0;
+    margin: 5px;
     padding: 0;
 }
 
@@ -67,4 +67,13 @@ span.negative {
     border: 1px solid #3A3E44; /* Bordure sombre Discord */
     border-radius: 4px;
     color: #fff; /* Texte clair */
+}
+
+a {
+    color: #e7a5e5; /* Rose clair stylé Discord pour les liens */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFF; /* Rose clair stylé Discord légèrement plus foncé au survol */
 }
